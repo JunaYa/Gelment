@@ -1,16 +1,23 @@
 use dioxus::prelude::*;
-
+use wasm_bindgen::prelude::*;
+extern crate console_error_panic_hook;
+use std::panic;
+use tracing::info;
 
 fn main() {
+    console_error_panic_hook::set_once();
+    // Add this line:
+    tracing_wasm::set_as_global_default();
+    // dioxus::web::launch(app);
     dioxus::desktop::launch(app);
 }
 
 fn app(cx: Scope) -> Element {
-    let name = "Aya";
     let enabled = true;
     let age = if enabled { 12 } else { 20 };
     // use_state
     let value = use_state(&cx, || String::from("hello world"));
+    let name = use_state(&cx, || String::from("aya"));
     cx.render(rsx! (
         div {
             h1 {
@@ -26,8 +33,10 @@ fn app(cx: Scope) -> Element {
                 onclick: move |_|{},
                 "button"
             }
+            ElName {
+                name: String::from("Junaya")
+            }
             p { "p" }
-            p { "p2 {name} {age}" }
             p {
                 enabled.then(|| rsx!{
                     "This is the p"
@@ -48,6 +57,19 @@ fn app(cx: Scope) -> Element {
             VoteButton { score: 32 }
          }
     ))
+}
+
+#[derive(PartialEq, Props)]
+struct NameProps {
+    name: String,
+}
+
+fn ElName(cx: Scope<NameProps>) -> Element {
+    cx.render(rsx![
+        div {
+            "{cx.props.name}"
+        }
+    ])
 }
 
 #[derive(PartialEq, Props)]
