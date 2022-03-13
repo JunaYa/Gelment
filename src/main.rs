@@ -45,6 +45,22 @@ fn app(cx: Scope) -> Element {
                 oninput: move |evt| value.set(evt.value.clone()),
                 value: "{value}",
             }
+            VoteButton { score: 32 }
          }
     ))
+}
+
+#[derive(PartialEq, Props)]
+struct VoteButtonProps {
+    score: i32,
+}
+
+fn VoteButton(cx: Scope<VoteButtonProps>) -> Element {
+    cx.render(rsx![
+        div {
+            div { "+" }
+            div { "{cx.props.score}"}
+            div { "-" }
+        }
+    ])
 }
