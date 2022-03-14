@@ -1,14 +1,6 @@
 use dioxus::prelude::*;
-use wasm_bindgen::prelude::*;
-extern crate console_error_panic_hook;
-use std::panic;
-use tracing::info;
-
 fn main() {
-    console_error_panic_hook::set_once();
     // Add this line:
-    tracing_wasm::set_as_global_default();
-    // dioxus::web::launch(app);
     dioxus::desktop::launch(app);
 }
 
