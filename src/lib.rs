@@ -1,4 +1,4 @@
-pub mod bin;
+pub mod components;
 pub mod prelude {
-    pub use crate::bin::button;
+    pub use crate::components::button;
 }

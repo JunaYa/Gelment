@@ -11,7 +11,7 @@ bench = false
 name = "dioxus-ulanqab"
 test = false
 bench = false
-path = "src/bin/dioxus-ulanqab/main.rs"
+path = "src/main.rs"
 
 [[example]]
 name = "ex-ulanqab"
