@@ -13,9 +13,5 @@ test = false
 bench = false
 path = "src/main.rs"
 
-[[example]]
-name = "ex-ulanqab"
-path = "examples/ex-ulanqab/main.rs"
-
 [dependencies]
 dioxus = { version = "0.2.3", features = ["web", "desktop"] }
