@@ -10,7 +10,7 @@ fn app(cx: Scope) -> Element {
     cx.render(rsx! (
         div {
             Button {
-                text: String::from("GButton")
+                text: "GButton"
             }
          }
     ))
