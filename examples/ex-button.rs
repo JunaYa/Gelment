@@ -36,43 +36,6 @@ fn app(cx: Scope) -> Element {
         Color::Default,
     ];
     cx.render(rsx! (
-        div {
-            Button {
-                size: Size::TINY,
-                text: "GButton-tiny",
-                onclick: move |_| {
-                    println!("GButton TINY");
-                }
-            }
-            Button {
-                size: Size::MEDIUM,
-                text: "GButton-medium",
-                onclick: move |_| {
-                    println!("GButton MEDIUM");
-                }
-            }
-            Button {
-                size: Size::LARGE,
-                text: "GButton-large",
-                onclick: move |_| {
-                    println!("GButton LARGE");
-                }
-            }
-            Button {
-                size: Size::XLARGE,
-                text: "GButton-xlarge",
-                onclick: move |_| {
-                    println!("GButton XLARGE");
-                }
-            }
-            Button {
-                size: Size::XXLARGE,
-                text: "GButton-xxlarge",
-                onclick: move |_| {
-                    println!("GButton XXLARGE");
-                }
-            }
-        }
         button_disabled(),
         v_color.iter().map(|color| {
             rsx!(

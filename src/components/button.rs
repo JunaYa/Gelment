@@ -35,6 +35,7 @@ pub fn Button<'a>(cx: Scope<'a, ButtonProps<'a>>) -> Element {
             font_size: "{font_size}",
             padding: "{padding_val}",
             border: "none",
+            cursor: "pointer",
             onclick: move |evt| { cx.props.onclick.call(evt) },
             "{cx.props.text}"
         }
