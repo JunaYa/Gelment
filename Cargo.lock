@@ -514,13 +514,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "dioxus_ulanqab"
-version = "0.1.0"
-dependencies = [
- "dioxus",
-]
-
-[[package]]
 name = "dispatch"
 version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -721,6 +714,13 @@ dependencies = [
  "libc",
  "system-deps 6.0.2",
  "x11",
+]
+
+[[package]]
+name = "gelement"
+version = "0.1.0"
+dependencies = [
+ "dioxus",
 ]
 
 [[package]]
