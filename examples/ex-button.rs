@@ -36,59 +36,11 @@ fn app(cx: Scope) -> Element {
         Color::Default,
     ];
     cx.render(rsx! (
-        button_disabled(),
         v_color.iter().map(|color| {
             rsx!(
                 GButtonColors { color: *color }
             )
         })
-    ))
-}
-fn button_disabled(cx: Scope) -> Element {
-    cx.render(rsx!(
-        div {
-            Button {
-                disabled: true,
-                size: Size::TINY,
-                text: "GButton-tiny",
-                onclick: move |_| {
-                    println!("GButton TINY");
-                }
-            }
-            Button {
-                disabled: true,
-                size: Size::MEDIUM,
-                text: "GButton-medium",
-                onclick: move |_| {
-                    println!("GButton MEDIUM");
-                }
-            }
-            Button {
-                disabled: true,
-                size: Size::LARGE,
-                text: "GButton-large",
-                onclick: move |_| {
-                    println!("GButton LARGE");
-                }
-            }
-            Button {
-                disabled: true,
-                size: Size::XLARGE,
-                text: "GButton-xlarge",
-                onclick: move |_| {
-                    println!("GButton XLARGE");
-                }
-            }
-            Button {
-                disabled: true,
-                size: Size::XXLARGE,
-                text: "GButton-xxlarge",
-                onclick: move |_| {
-                    println!("GButton XXLARGE");
-                }
-            }
-        }
-        
     ))
 }
 #[derive(Props, PartialEq)]
@@ -100,7 +52,7 @@ fn GButtonColors(cx: Scope<BgColorProps>) -> Element {
     cx.render(rsx!(
         div {
             Button {
-                disabled: true,
+                disabled: false,
                 size: Size::TINY,
                 color: Color::White,
                 bg_color: cx.props.color,
@@ -110,7 +62,7 @@ fn GButtonColors(cx: Scope<BgColorProps>) -> Element {
                 }
             }
             Button {
-                disabled: true,
+                disabled: false,
                 size: Size::MEDIUM,
                 color: Color::White,
                 bg_color: cx.props.color,
@@ -120,7 +72,7 @@ fn GButtonColors(cx: Scope<BgColorProps>) -> Element {
                 }
             }
             Button {
-                disabled: true,
+                disabled: false,
                 size: Size::LARGE,
                 color: Color::White,
                 bg_color: cx.props.color,
@@ -130,7 +82,7 @@ fn GButtonColors(cx: Scope<BgColorProps>) -> Element {
                 }
             }
             Button {
-                disabled: true,
+                disabled: false,
                 size: Size::XLARGE,
                 color: Color::White,
                 bg_color: cx.props.color,

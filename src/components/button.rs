@@ -27,6 +27,7 @@ pub fn Button<'a>(cx: Scope<'a, ButtonProps<'a>>) -> Element {
     let font_size = cx.props.size.get_font_size();
     let bg_color = cx.props.bg_color.text_color();
     let color = cx.props.color.text_color();
+    let cursor = if cx.props.disabled == true { "not-allowed" } else { "pointer" };
     cx.render(rsx!(
         button {
             disabled: "{cx.props.disabled}",
@@ -35,7 +36,8 @@ pub fn Button<'a>(cx: Scope<'a, ButtonProps<'a>>) -> Element {
             font_size: "{font_size}",
             padding: "{padding_val}",
             border: "none",
-            cursor: "pointer",
+            cursor: "{cursor}",
+            border_radius: "12px",
             onclick: move |evt| { cx.props.onclick.call(evt) },
             "{cx.props.text}"
         }
