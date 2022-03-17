@@ -33,6 +33,18 @@ impl Size {
 			Size::Default => "none".into(),
 		}
 	}
+
+	pub fn get_font_size(self) -> Box<str> {
+		match self {
+			Size::TINY => ".75rem".into(),
+			Size::SMALL => ".875rem".into(),
+			Size::MEDIUM => "1rem".into(),
+			Size::LARGE => "1.125rem".into(),
+			Size::XLARGE => "1.5rem".into(),
+			Size::XXLARGE => "1.875rem".into(),
+			Size::Default => "1rem".into(),
+		}		
+	}
 }
 
 impl Default for Size {
