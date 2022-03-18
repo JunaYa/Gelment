@@ -12,6 +12,9 @@ pub struct ButtonProps<'a> {
 
     #[props(default)]
     size: Size,
+    
+    #[props(default)]
+    border_radius: Size,
 
     #[props(default)]
     disabled: bool,
@@ -28,6 +31,7 @@ pub fn Button<'a>(cx: Scope<'a, ButtonProps<'a>>) -> Element {
     let bg_color = cx.props.bg_color.text_color();
     let color = cx.props.color.text_color();
     let cursor = if cx.props.disabled == true { "not-allowed" } else { "pointer" };
+    let border_radius = cx.props.border_radius.get_border_radius();
     cx.render(rsx!(
         button {
             disabled: "{cx.props.disabled}",
@@ -37,7 +41,7 @@ pub fn Button<'a>(cx: Scope<'a, ButtonProps<'a>>) -> Element {
             padding: "{padding_val}",
             border: "none",
             cursor: "{cursor}",
-            border_radius: "12px",
+            border_radius: "{border_radius}",
             onclick: move |evt| { cx.props.onclick.call(evt) },
             "{cx.props.text}"
         }
