@@ -9,4 +9,5 @@ pub mod prelude {
     pub use crate::color::*;
 
     pub use crate::components::button::*;
+    pub use crate::components::checkbox::*;
 }
