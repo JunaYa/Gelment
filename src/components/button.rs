@@ -28,21 +28,24 @@ pub struct ButtonProps<'a> {
 pub fn Button<'a>(cx: Scope<'a, ButtonProps<'a>>) -> Element {
     let padding_val = cx.props.size.get_padding();
     let font_size = cx.props.size.get_font_size();
-    let bg_color = cx.props.bg_color.text_color();
+    let bg_color = cx.props.bg_color.bg_color();
     let color = cx.props.color.text_color();
     let cursor = if cx.props.disabled == true { "not-allowed" } else { "pointer" };
     let border_radius = cx.props.border_radius.get_border_radius();
     cx.render(rsx!(
         button {
             disabled: "{cx.props.disabled}",
-            background_color: "{bg_color}",
             color: "{color}",
+            background_color: "{bg_color}",
             font_size: "{font_size}",
             padding: "{padding_val}",
             border: "none",
             cursor: "{cursor}",
+            box_shadow: "0.3rem 0.3rem 0.6rem #c8d0e7, -0.2rem -0.2rem 0.5rem #FFFFFF",
             border_radius: "{border_radius}",
-            onclick: move |evt| { cx.props.onclick.call(evt) },
+            onclick: move |evt| { 
+                cx.props.onclick.call(evt);
+            },
             "{cx.props.text}"
         }
     ))
