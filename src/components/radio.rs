@@ -5,6 +5,9 @@ use crate::color::Color;
 #[derive(Props)]
 pub struct RadioProps<'a> {
     #[props(default)]
+    checked: bool,
+
+    #[props(default)]
     color: Color,
 
     #[props(default)]
@@ -15,9 +18,11 @@ pub struct RadioProps<'a> {
 
 
 pub fn Radio<'a>(cx: Scope<'a, RadioProps<'a>>) -> Element {
-    let color = cx.props.color.text_color();
+    let c_default = Color::Gray;
+    let color = if cx.props.checked { cx.props.color.text_color() } else { c_default.text_color()};
     cx.render(rsx!(
         div {
+            display: "inline-flex",
             width: ".8rem",
             height: ".8rem",
             background_color: "#fff",
