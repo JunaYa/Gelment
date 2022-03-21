@@ -10,4 +10,5 @@ pub mod prelude {
 
     pub use crate::components::button::*;
     pub use crate::components::checkbox::*;
+    pub use crate::components::radio::*;
 }
