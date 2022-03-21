@@ -56,6 +56,15 @@ fn app(cx: Scope) -> Element {
                             println!("radio click")
                         }
                     }
+                    Radio{
+                        disabled: true,
+                        checked: false,
+                        color: *color,
+                        size: Size::TINY,
+                        onclick: move |_| {
+                            println!("radio click")
+                        }
+                    }
                 }
             )
         })

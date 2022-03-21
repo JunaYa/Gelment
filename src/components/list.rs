@@ -1,13 +1,13 @@
 use dioxus::prelude::*;
 
 #[derive(Props)]
-pub struct ListProps {
+pub struct ListProps<'a> {
     data: Vec<String>,
-    children: Element,
+    children: Element<'a>,
 }
 
-pub fn List(cx: Scope) -> Element {
+pub fn List<'a>(cx: Scope<'a, ListProps<'a>>) -> Element {
     cx.render(rsx!(
-        cx.props.children,
+        &cx.props.children,
     ))
 }
