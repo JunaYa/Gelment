@@ -51,7 +51,31 @@ fn app(cx: Scope) -> Element {
                     Radio{
                         checked: true,
                         color: *color,
-                        size: Size::TINY,
+                        size: Size::SMALL,
+                        onclick: move |_| {
+                            println!("radio click")
+                        }
+                    }
+                    Radio{
+                        checked: true,
+                        color: *color,
+                        size: Size::MEDIUM,
+                        onclick: move |_| {
+                            println!("radio click")
+                        }
+                    }
+                    Radio{
+                        checked: true,
+                        color: *color,
+                        size: Size::LARGE,
+                        onclick: move |_| {
+                            println!("radio click")
+                        }
+                    }
+                    Radio{
+                        checked: true,
+                        color: *color,
+                        size: Size::XLARGE,
                         onclick: move |_| {
                             println!("radio click")
                         }
@@ -60,7 +84,7 @@ fn app(cx: Scope) -> Element {
                         disabled: true,
                         checked: false,
                         color: *color,
-                        size: Size::TINY,
+                        size: Size::XXLARGE,
                         onclick: move |_| {
                             println!("radio click")
                         }

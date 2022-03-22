@@ -24,11 +24,12 @@ pub fn Radio<'a>(cx: Scope<'a, RadioProps<'a>>) -> Element {
     let c_default = Color::Gray;
     let color = if cx.props.checked { cx.props.color.text_color() } else { c_default.text_color()};
     let cursor = if cx.props.disabled { "not-allowed" } else { "pointer" };
+    let size = cx.props.size.get_radio();
     cx.render(rsx!(
         div {
             display: "inline-flex",
-            width: ".8rem",
-            height: ".8rem",
+            width: "{size}",
+            height: "{size}",
             background_color: "#fff",
             border: ".15rem solid {color}",
             border_radius: "50%",
