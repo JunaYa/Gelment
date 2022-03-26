@@ -68,6 +68,17 @@ impl Size {
             Size::Default => "1rem".into(),
         }
     }
+    pub fn get_checkbox(self) -> Box<str> {
+        match self {
+            Size::TINY => ".8rem".into(),
+            Size::SMALL => ".875rem".into(),
+            Size::MEDIUM => "1rem".into(),
+            Size::LARGE => "1.25rem".into(),
+            Size::XLARGE => "1.5rem".into(),
+            Size::XXLARGE => "1.75rem".into(),
+            Size::Default => "1rem".into(),
+        }
+    }
 }
 
 impl Default for Size {

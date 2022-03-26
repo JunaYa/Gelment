@@ -28,6 +28,8 @@ pub fn Checkbox<'a>(cx: Scope<'a, CheckboxProps<'a>>) -> Element{
 	let default_color = c.text_color();
 	let cursor = if cx.props.disabled { "not-allowed" } else { "pointer" };
 	let color = if cx.props.checked {cx.props.color.text_color()} else {default_color};
+	let size = cx.props.size.get_checkbox();
+	let font_size = cx.props.size.get_font_size();
 	cx.render(rsx!{
 		div {
 			display: "inline-flex",
@@ -38,8 +40,8 @@ pub fn Checkbox<'a>(cx: Scope<'a, CheckboxProps<'a>>) -> Element{
 				cx.props.onclick.call(evt);
 			},
 			div {
-				width: ".8rem",
-				height: ".8rem",
+				width: "{size}",
+				height: "{size}",
 				border: ".15rem solid {color}",
 				border_radius: ".3rem",
 				background_color: "#fff",
@@ -52,6 +54,7 @@ pub fn Checkbox<'a>(cx: Scope<'a, CheckboxProps<'a>>) -> Element{
 				checked: "{cx.props.checked}",
 			}
 			label {
+				font_size: "{font_size}",
 				color: "{color}",
 				"{cx.props.label}"
 			}
