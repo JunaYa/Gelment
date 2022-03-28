@@ -3,3 +3,4 @@ pub mod checkbox;
 pub mod radio;
 pub mod confirm;
 pub mod list;
+pub mod divider;
