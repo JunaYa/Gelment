@@ -15,7 +15,8 @@ fn app(cx: Scope) -> Element {
                     Divider {
                         color: Color::Gray,
                         size: Size::TINY,
-                        border_style: *border_style
+                        border_style: *border_style,
+                        text: "divier"
                     }
                 }
             )
