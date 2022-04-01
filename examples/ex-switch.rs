@@ -47,6 +47,26 @@ fn app(cx: Scope) -> Element {
                         color: *color,
                         size: Size::TINY,
                     }
+                    Switch {
+                        color: *color,
+                        size: Size::SMALL,
+                    }
+                    Switch {
+                        color: *color,
+                        size: Size::MEDIUM,
+                    }
+                    Switch {
+                        color: *color,
+                        size: Size::LARGE,
+                    }
+                    Switch {
+                        color: *color,
+                        size: Size::XLARGE,
+                    }
+                    Switch {
+                        color: *color,
+                        size: Size::XXLARGE,
+                    }
                 }
             )
         })

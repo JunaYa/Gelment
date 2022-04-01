@@ -16,6 +16,8 @@ pub struct SwitchProps<'a> {
 
 pub fn Switch<'a>(cx: Scope<'a, SwitchProps<'a>>) -> Element {
     let color = cx.props.color.bg_color();
+    let width = cx.props.size.get_switch_width();
+    let height = cx.props.size.get_switch_height();
     cx.render(rsx!(
         div {
             display: "inline-flex",
@@ -24,6 +26,8 @@ pub fn Switch<'a>(cx: Scope<'a, SwitchProps<'a>>) -> Element {
             justify_content: "center",
             padding:  "0.5rem",
             background_color: "{color}",
+            width: "{width}",
+            height: "{height}",
             div {
                 flex: "1",
                 width: "100%",
