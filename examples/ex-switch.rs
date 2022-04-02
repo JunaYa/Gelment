@@ -46,18 +46,22 @@ fn app(cx: Scope) -> Element {
                     Switch {
                         color: *color,
                         size: Size::TINY,
+                        checked: false,
                     }
                     Switch {
                         color: *color,
                         size: Size::SMALL,
+                        checked: true,
                     }
                     Switch {
                         color: *color,
                         size: Size::MEDIUM,
+                        checked: true,
                     }
                     Switch {
                         color: *color,
                         size: Size::LARGE,
+                        checked: true,
                     }
                     Switch {
                         color: *color,
@@ -66,6 +70,7 @@ fn app(cx: Scope) -> Element {
                     Switch {
                         color: *color,
                         size: Size::XXLARGE,
+                        checked: true,
                     }
                 }
             )
