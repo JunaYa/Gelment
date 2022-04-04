@@ -12,5 +12,7 @@ pub mod prelude {
     pub use crate::components::checkbox::*;
     pub use crate::components::radio::*;
     pub use crate::components::switch::*;
+    pub use crate::components::number_input::*;
+    pub use crate::components::list::*;
     pub use crate::components::divider::*;
 }
