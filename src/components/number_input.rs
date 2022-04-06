@@ -1,4 +1,5 @@
 use dioxus::{prelude::*};
+use crate::size::Size;
 
 #[derive(Props)]
 pub struct NumberInputProps<'a> {
@@ -7,12 +8,16 @@ pub struct NumberInputProps<'a> {
     pub value: i32,
 
     #[props(default)]
+    pub size: Size,
+
+    #[props(default)]
     pub label: &'a str,
 }
 
 pub fn NumberInput<'a>(cx: Scope<'a, NumberInputProps<'a>>) -> Element {
     let value = cx.props.value;
     let label = cx.props.label;
+    let size = cx.props.size.get_font_size();
     cx.render(rsx!(
         div {
             display: "inline-flex",
@@ -30,6 +35,7 @@ pub fn NumberInput<'a>(cx: Scope<'a, NumberInputProps<'a>>) -> Element {
                 border_radius: "0.5rem",
                 background_color: "white",
                 margin_right: "0.5rem",
+                font_size: "{size}",
                 "{label}"
             }
             input {
@@ -37,6 +43,7 @@ pub fn NumberInput<'a>(cx: Scope<'a, NumberInputProps<'a>>) -> Element {
                 text_align: "center",
                 font_size: "1.5rem",
                 font_weight: "bold",
+                font_size: "{size}",
                 color: "black",
                 background_color: "red",
                 text_align: "center",
