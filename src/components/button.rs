@@ -41,7 +41,7 @@ pub fn Button<'a>(cx: Scope<'a, ButtonProps<'a>>) -> Element {
             padding: "{padding_val}",
             border: "none",
             cursor: "{cursor}",
-            box_shadow: "0.3rem 0.3rem 0.6rem #c8d0e7, -0.2rem -0.2rem 0.5rem #FFFFFF",
+            box_shadow: "0.1rem 0.1rem 0.6rem {bg_color}, -0.2rem -0.2rem 0.5rem #FFFFFF",
             border_radius: "{border_radius}",
             onclick: move |evt| { 
                 cx.props.onclick.call(evt);
