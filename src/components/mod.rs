@@ -4,5 +4,6 @@ pub mod radio;
 pub mod switch;
 pub mod confirm;
 pub mod number_input;
+pub mod rate;
 pub mod list;
 pub mod divider;
