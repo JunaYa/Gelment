@@ -1,9 +1,9 @@
-use dioxus::prelude::*;
+use dioxus::{{prelude::*, events::MouseEvent}};
 use crate::size::Size;
 use crate::color::Color;
 
 #[derive(Props)]
-pub struct RateProps {
+pub struct RateProps<'a> {
     #[props(default)]
     color: Color,
 
@@ -12,25 +12,29 @@ pub struct RateProps {
 
     #[props(default)]
     value: u8,
+
+    #[props(default)]
+    onclick: EventHandler<'a, MouseEvent>,
 }
 
-pub fn Rate(cx: Scope<RateProps>) -> Element {
-    cx.render(rsx!{
+pub fn Rate<'a>(cx: Scope<'a, RateProps<'a>>) -> Element {
+    let names = [1, 2, 3, 4, 5];
+    cx.render(rsx!(
         div {
-            for i in 0..cx.props.value {
-                Star {
-                    name: "star",
-                    size: cx.props.size,
-                    color: cx.props.color,
-                }
-            }
-            for i in cx.props.value..5 {
-                Star {
-                    name: "star-outline",
-                    size: cx.props.size,
-                    color: cx.props.color,
-                }
-            }
+            names.iter().map(move |item| {
+                let width = cx.props.size.get_switch_width();
+                let bg_color = cx.props.color.bg_color();
+                rsx!(
+                    div {
+                        display: "inline-block",
+                        width: "{width}",
+                        height: "{width}",
+                        background_color: "{bg_color}",
+                        margin_right: ".2rem",
+                        "",
+                    }
+                )
+            })
         }
-    })
+    ))
 }
