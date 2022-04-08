@@ -3,10 +3,12 @@
 pub mod components;
 pub mod size;
 pub mod color;
+pub mod constants;
 
 pub mod prelude {
     pub use crate::size::*;
     pub use crate::color::*;
+    pub use crate::constants::*;
 
     pub use crate::components::button::*;
     pub use crate::components::checkbox::*;
