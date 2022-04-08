@@ -1,5 +1,5 @@
 use dioxus::{prelude::*, events::MouseEvent};
-use gelement::{prelude::*, size::Size, color::Color};
+use gelement::{prelude::*, size::Size, color::Color, constants::getColors};
 
 fn main() {
     // Add this line:
@@ -7,34 +7,7 @@ fn main() {
 }
 
 fn app(cx: Scope) -> Element {
-    let v_color: Vec<Color> = vec![
-        Color::Transparent,
-        Color::Black,
-        Color::White,
-        Color::Slate,
-        Color::Gray,
-        Color::Zinc,
-        Color::Neutral,
-        Color::Stone,
-        Color::Red,
-        Color::Orange,
-        Color::Amber,
-        Color::Yellow,
-        Color::Lime,
-        Color::Green,
-        Color::Emerald,
-        Color::Teal,
-        Color::Cyan,
-        Color::Sky,
-        Color::Blue,
-        Color::Indigo,
-        Color::Violet,
-        Color::Purple,
-        Color::Fuchsia,
-        Color::Pink,
-        Color::Rose,
-        Color::Default,
-    ];
+    let v_color: Vec<Color> = getColors();
     let mut list_checkgroup: Vec<CheckGroupsItem> = vec![];
     for i in 0..v_color.len() {
         let item = CheckGroupsItem {
