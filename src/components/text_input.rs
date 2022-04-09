@@ -1,7 +1,9 @@
 use dioxus::prelude::*;
+use crate::size::Size;
+use crate::color::Color;
 
 #[derive(Props, PartialEq)]
-pub struct TextInputProps {
+pub struct TextInputProps<'a> {
     #[props(default)]
     color: Color,
 
@@ -9,14 +11,17 @@ pub struct TextInputProps {
     size: Size,
 
     #[props(default)]
-    value: &str,
+    value: &'a str,
+
+    #[props(default)]
+    label: &'a str,
 }
 
-pub fn TextInput(cx: Scope<TextInputProps>) -> Element {
+pub fn TextInput<'a>(cx: Scope<'a, TextInputProps<'a>>) -> Element {
     cx.render(rsx!(
         input {
             "type": "text",
-            value: "{search_input}",
+            value: "",
             placeholder: "placeholder",
             oninput: move |evt| {
                 println!("{:?}", evt);
