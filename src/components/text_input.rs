@@ -15,10 +15,14 @@ pub struct TextInputProps<'a> {
 }
 
 pub fn TextInput<'a>(cx: Scope<'a, TextInputProps<'a>>) -> Element {
+    let color = cx.props.color.text_color();
+    let font_size = cx.props.size.get_font_size();
     cx.render(rsx!(
         input {
             "type": "text",
             value: "",
+            color: "{color}",
+            font_size: "{font_size}",
             placeholder: "placeholder",
             oninput: move |evt| {
                 println!("{:?}", evt);
