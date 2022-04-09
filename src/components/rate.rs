@@ -18,12 +18,17 @@ pub struct RateProps<'a> {
 }
 
 pub fn Rate<'a>(cx: Scope<'a, RateProps<'a>>) -> Element {
-    let names = [1, 2, 3, 4, 5];
+    let names:Vec<u8> = vec![1, 2, 3, 4, 5];
     cx.render(rsx!(
         div {
             names.iter().map(move |item| {
                 let width = cx.props.size.get_switch_width();
-                let bg_color = cx.props.color.bg_color();
+                let default_color = Color::Gray;
+                let mut bg_color = cx.props.color.bg_color();
+                let value = cx.props.value;
+                if value < *item {
+                    bg_color = default_color.bg_color();
+                }
                 rsx!(
                     div {
                         display: "inline-block",

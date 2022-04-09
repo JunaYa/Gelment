@@ -27,6 +27,7 @@ fn GButtonColors(cx: Scope<BgColorProps>) -> Element {
             Rate {
                 size: Size::TINY,
                 color: cx.props.color,
+                value: 2,
                 onclick: move |_| {
                     println!("GButton TINY");
                 }
@@ -34,6 +35,7 @@ fn GButtonColors(cx: Scope<BgColorProps>) -> Element {
             Rate {
                 size: Size::MEDIUM,
                 color: cx.props.color,
+                value: 2,
                 onclick: move |_| {
                     println!("GButton MEDIUM");
                 }
@@ -41,6 +43,7 @@ fn GButtonColors(cx: Scope<BgColorProps>) -> Element {
             Rate {
                 size: Size::LARGE,
                 color: cx.props.color,
+                value: 2,
                 onclick: move |_| {
                     println!("GButton LARGE");
                 }
@@ -48,6 +51,7 @@ fn GButtonColors(cx: Scope<BgColorProps>) -> Element {
             Rate {
                 size: Size::XLARGE,
                 color: cx.props.color,
+                value: 2,
                 onclick: move |_| {
                     println!("GButton XLARGE");
                 }
@@ -55,6 +59,7 @@ fn GButtonColors(cx: Scope<BgColorProps>) -> Element {
             Rate {
                 size: Size::XXLARGE,
                 color: cx.props.color,
+                value: 2,
                 onclick: move |_| {
                     println!("GButton XXLARGE");
                 }
