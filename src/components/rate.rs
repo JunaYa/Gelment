@@ -30,7 +30,7 @@ pub fn Rate<'a>(cx: Scope<'a, RateProps<'a>>) -> Element {
                     bg_color = default_color.bg_color();
                 }
                 rsx!(
-                    div {
+                    input {
                         display: "inline-block",
                         width: "{width}",
                         height: "{width}",
