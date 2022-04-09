@@ -12,9 +12,6 @@ pub struct TextInputProps<'a> {
 
     #[props(default)]
     value: &'a str,
-
-    #[props(default)]
-    label: &'a str,
 }
 
 pub fn TextInput<'a>(cx: Scope<'a, TextInputProps<'a>>) -> Element {
