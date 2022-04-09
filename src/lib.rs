@@ -15,6 +15,7 @@ pub mod prelude {
     pub use crate::components::radio::*;
     pub use crate::components::switch::*;
     pub use crate::components::number_input::*;
+    pub use crate::components::text_input::*;
     pub use crate::components::rate::*;
     pub use crate::components::list::*;
     pub use crate::components::divider::*;
