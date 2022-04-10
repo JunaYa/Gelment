@@ -30,6 +30,8 @@ fn GelementNumberInput (cx: Scope<ColorProps>) -> Element {
                     value: 0,
                     size: Size::TINY,
                     color: cx.props.color,
+                    max: 99,
+                    min: 0,
                     label: "Number Input",
                 },
             }
@@ -38,6 +40,8 @@ fn GelementNumberInput (cx: Scope<ColorProps>) -> Element {
                     value: 0,
                     size: Size::SMALL,
                     color: cx.props.color,
+                    max: 99,
+                    min: 0,
                     label: "Number Input",
                 },
             }
@@ -46,6 +50,8 @@ fn GelementNumberInput (cx: Scope<ColorProps>) -> Element {
                     value: 0,
                     size: Size::MEDIUM,
                     color: cx.props.color,
+                    max: 99,
+                    min: 0,
                     label: "Number Input",
                 },
             }   
@@ -54,6 +60,8 @@ fn GelementNumberInput (cx: Scope<ColorProps>) -> Element {
                     value: 0,
                     size: Size::LARGE,
                     color: cx.props.color,
+                    max: 99,
+                    min: 0,
                     label: "Number Input",
                 }
             }
@@ -62,6 +70,8 @@ fn GelementNumberInput (cx: Scope<ColorProps>) -> Element {
                     value: 0,
                     size: Size::XLARGE,
                     color: cx.props.color,
+                    max: 99,
+                    min: 0,
                     label: "Number Input",
                 }
             }
@@ -70,6 +80,8 @@ fn GelementNumberInput (cx: Scope<ColorProps>) -> Element {
                     value: 0,
                     size: Size::XXLARGE,
                     color: cx.props.color,
+                    max: 99,
+                    min: 0,
                     label: "Number Input",
                 }
             }         

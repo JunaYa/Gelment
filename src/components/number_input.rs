@@ -15,6 +15,12 @@ pub struct NumberInputProps<'a> {
     pub color: Color,
 
     #[props(default)]
+    pub max: i32,
+
+    #[props(default)]
+    pub min: i32,
+
+    #[props(default)]
     pub label: &'a str,
 }
 
@@ -51,6 +57,8 @@ pub fn NumberInput<'a>(cx: Scope<'a, NumberInputProps<'a>>) -> Element {
                 font_size: "{size}",
                 color: "{text_color}",
                 text_align: "center",
+                max: "{max}",
+                min: "{min}",
                 oninput: move |evt| {
                     println!("{:?}", evt);
                 },
