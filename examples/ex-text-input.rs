@@ -29,6 +29,7 @@ fn GelementTextInput (cx: Scope<ColorProps>) -> Element {
                 TextInput {
                     value: "0"
                     size: Size::TINY,
+                    maxlength: 5,
                     color: cx.props.color,
                 },
             }
@@ -36,6 +37,7 @@ fn GelementTextInput (cx: Scope<ColorProps>) -> Element {
                 TextInput {
                     value: "0"
                     size: Size::SMALL,
+                    maxlength: 5,
                     color: cx.props.color,
                 },
             }
@@ -43,6 +45,7 @@ fn GelementTextInput (cx: Scope<ColorProps>) -> Element {
                 TextInput {
                     value: "0"
                     size: Size::MEDIUM,
+                    maxlength: 5,
                     color: cx.props.color,
                 },
             }   
@@ -50,6 +53,7 @@ fn GelementTextInput (cx: Scope<ColorProps>) -> Element {
                 TextInput {
                     value: "0"
                     size: Size::LARGE,
+                    maxlength: 5,
                     color: cx.props.color,
                 }
             }
@@ -57,6 +61,7 @@ fn GelementTextInput (cx: Scope<ColorProps>) -> Element {
                 TextInput {
                     value: "0"
                     size: Size::XLARGE,
+                    maxlength: 5,
                     color: cx.props.color,
                 }
             }
@@ -64,6 +69,7 @@ fn GelementTextInput (cx: Scope<ColorProps>) -> Element {
                 TextInput {
                     value: "0"
                     size: Size::XXLARGE,
+                    maxlength: 5,
                     color: cx.props.color,
                 }
             }         

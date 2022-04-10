@@ -11,18 +11,23 @@ pub struct TextInputProps<'a> {
     size: Size,
 
     #[props(default)]
+    maxlength: u32,
+
+    #[props(default)]
     value: &'a str,
 }
 
 pub fn TextInput<'a>(cx: Scope<'a, TextInputProps<'a>>) -> Element {
     let color = cx.props.color.text_color();
     let font_size = cx.props.size.get_font_size();
+    let maxlength = cx.props.maxlength;
     cx.render(rsx!(
         input {
             "type": "text",
             value: "",
             color: "{color}",
             font_size: "{font_size}",
+            maxlength: "{maxlength}",
             placeholder: "placeholder",
             oninput: move |evt| {
                 println!("{:?}", evt);
