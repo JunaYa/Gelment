@@ -28,6 +28,8 @@ pub fn NumberInput<'a>(cx: Scope<'a, NumberInputProps<'a>>) -> Element {
     let value = cx.props.value;
     let label = cx.props.label;
     let size = cx.props.size.get_font_size();
+    let max = cx.props.max;
+    let min = cx.props.min;
     let text_color = cx.props.color.text_color();
     let bg_color = cx.props.color.bg_color();
     cx.render(rsx!(
