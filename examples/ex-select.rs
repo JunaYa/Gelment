@@ -14,53 +14,34 @@ fn app(cx: Scope) -> Element {
             rsx!(
                 div {
                     Select{
-                        checked: false,
+                        disabled: false,
                         color: *color,
                         size: Size::TINY,
-                        onclick: move |_| {
-                            println!("radio click")
-                        }
                     }
                     Select{
-                        checked: true,
+                        disabled: false,
                         color: *color,
                         size: Size::SMALL,
-                        onclick: move |_| {
-                            println!("radio click")
-                        }
                     }
                     Select{
-                        checked: true,
+                        disabled: false,
                         color: *color,
                         size: Size::MEDIUM,
-                        onclick: move |_| {
-                            println!("radio click")
-                        }
                     }
                     Select{
-                        checked: true,
+                        disabled: false,
                         color: *color,
                         size: Size::LARGE,
-                        onclick: move |_| {
-                            println!("radio click")
-                        }
                     }
                     Select{
-                        checked: true,
+                        disabled: false,
                         color: *color,
                         size: Size::XLARGE,
-                        onclick: move |_| {
-                            println!("radio click")
-                        }
                     }
                     Select{
-                        disabled: true,
-                        checked: false,
+                        disabled: false,
                         color: *color,
                         size: Size::XXLARGE,
-                        onclick: move |_| {
-                            println!("radio click")
-                        }
                     }
                 }
             )
