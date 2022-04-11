@@ -29,6 +29,18 @@ pub fn Select(cx: Scope<'a, SelectProps<'a>>) -> Element {
             onchange: move |evt| {
                 onchange.call(evt.target.value);
             }
+            option { 
+                value: "1",
+                "Medium"
+            }
+            option { 
+                value: "2",
+                "Small"
+            }
+            option { 
+                value: "3",
+                "Large"
+            }
         }
     ))
 }
